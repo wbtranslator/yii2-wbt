@@ -2,6 +2,7 @@
 
 namespace wbtranslator\wbt;
 
+use wbtranslator\wbt\controllers\ApiController;
 use yii\db\Exception;
 
 /**

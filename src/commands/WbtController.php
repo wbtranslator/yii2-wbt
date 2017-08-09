@@ -7,6 +7,7 @@ use wbtranslator\wbt\models\AbstractionImport;
 use wbtranslator\wbt\helpers\MessageHelper;
 use WBTranslator\WBTranslatorSdk;
 use wbtranslator\wbt\WbtPlugin;
+use yii\console\Controller;
 use yii\base\Exception;
 use yii\base\Module;
 use Yii;
@@ -15,7 +16,7 @@ use Yii;
  * Class WbtController
  * @package wbtranslator\wbt\commands
  */
-class WbtController extends \yii\console\Controller
+class WbtController extends Controller
 {
     /**
      * @var WBTranslatorSdk
@@ -42,34 +43,6 @@ class WbtController extends \yii\console\Controller
     }
 
     /**
-     * @param null $messsage
-     * @param int $code
-     * @return mixed
-     */
-    protected function actionResponseError($messsage = null, $code = 400)
-    {
-        return [
-            'message' => $messsage,
-            'status' => 'error',
-            'code' => $code
-        ];
-    }
-
-    /**
-     * @param null $messsage
-     * @param int $code
-     * @return mixed
-     */
-    protected function actionResponseSuccess($messsage = null, $code = 200)
-    {
-        return [
-            'message' => $messsage,
-            'status' => 'success',
-            'code' => $code
-        ];
-    }
-
-    /**
      * @return mixed
      */
     public function actionExport()
@@ -83,10 +56,15 @@ class WbtController extends \yii\console\Controller
         } catch (Exception $e) {
 
             Yii::error('TRANSLATOR: ' . $e->getMessage());
-            return $this->actionResponseError($e->getMessage());
+
+            echo $e->getMessage();
+
+            return Controller::EXIT_CODE_ERROR;
         }
 
-        return $this->actionResponseSuccess();
+        echo 'success';
+
+        return Controller::EXIT_CODE_NORMAL;
     }
 
     /**
@@ -98,7 +76,10 @@ class WbtController extends \yii\console\Controller
             $translations = $this->sdk->translations()->all();
 
         } catch (\Exception $e) {
-            return $this->actionResponseError();
+
+            echo $e->getMessage();
+
+            return Controller::EXIT_CODE_ERROR;
         }
 
         $abstractionImport = new AbstractionImport();
@@ -106,6 +87,6 @@ class WbtController extends \yii\console\Controller
 
         MessageHelper::getMessageImport($res);
 
-        return $this->actionResponseSuccess();
+        return Controller::EXIT_CODE_NORMAL;
     }
 }

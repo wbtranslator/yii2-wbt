@@ -29,7 +29,7 @@ class AbstractionExport extends AbstractionBase
 
                 if (file_exists($absolutePath)) {
 
-                    $data = include $absolutePath;$data = include $absolutePath;
+                    $data = include $absolutePath;
 
                     if (!empty($data) && is_array($data)) {
 
