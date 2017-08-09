@@ -13,8 +13,8 @@ class MessageHelper
      */
     public static function getMessageImport($statistic)
     {
-        if (key_exists('allDb', $statistic)) {
-            echo "Imported " . $statistic['allDb'] . " translations for the database \r\n";
+        if (key_exists('allDB', $statistic)) {
+            echo "Imported " . $statistic['allDB'] . " translations for the database \r\n";
         }
 
         if (key_exists('updatedDB', $statistic)) {

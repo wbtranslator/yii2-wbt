@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca54f999-a3ec-45af-8bd1-705e03b18e7d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AbstractionImport.php" afterPath="$PROJECT_DIR$/models/AbstractionImport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/MessageHelper.php" afterPath="$PROJECT_DIR$/helpers/MessageHelper.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,21 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageHelper.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageHelper.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/helpers/MessageHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractionImport.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractionImport.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/AbstractionImport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="376" column="9" lean-forward="true" selection-start-line="370" selection-start-column="8" selection-end-line="376" selection-end-column="9" />
+            <state relative-caret-position="412">
+              <caret line="358" column="9" lean-forward="true" selection-start-line="358" selection-start-column="9" selection-end-line="358" selection-end-column="9" />
               <folding>
                 <element signature="e#43#86#0#PHP" expanded="true" />
               </folding>
@@ -113,6 +112,7 @@
         <option value="$PROJECT_DIR$/models/AbstractionBase.php" />
         <option value="$PROJECT_DIR$/commands/WbtController.php" />
         <option value="$PROJECT_DIR$/models/AbstractionImport.php" />
+        <option value="$PROJECT_DIR$/helpers/MessageHelper.php" />
       </list>
     </option>
   </component>
@@ -182,7 +182,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wbt-plugin-yii2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../basic" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -214,7 +214,7 @@
       <updated>1502204308466</updated>
       <workItem from="1502204309694" duration="115000" />
       <workItem from="1502259138185" duration="3787000" />
-      <workItem from="1502264967255" duration="3216000" />
+      <workItem from="1502264967255" duration="3683000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1502204399698</created>
@@ -230,11 +230,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502265016322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix with hasParent method">
+      <created>1502269317981</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1502269317981</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7118000" />
+    <option name="totallyTimeSpent" value="7585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -266,7 +273,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="fix with hasParent method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix with hasParent method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -369,6 +377,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/AbstractionImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="358" column="9" lean-forward="true" selection-start-line="358" selection-start-column="9" selection-end-line="358" selection-end-column="9" />
+          <folding>
+            <element signature="e#43#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/FilePathHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-789">
@@ -381,19 +399,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/MessageHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="270">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/AbstractionImport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="376" column="9" lean-forward="true" selection-start-line="370" selection-start-column="8" selection-end-line="376" selection-end-column="9" />
-          <folding>
-            <element signature="e#43#86#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
