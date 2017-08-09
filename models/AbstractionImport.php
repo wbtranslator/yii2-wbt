@@ -12,7 +12,7 @@ use Yii;
 
 /**
  * Class AbstractionImport
- * @package common\modules\wbtplugin\models
+ * @package wbtranslator\wbt\models
  */
 class AbstractionImport extends AbstractionBase
 {
@@ -368,11 +368,10 @@ class AbstractionImport extends AbstractionBase
      */
     private function getRecursivePath(GroupInterface $group, string $path = ''): string
     {
-        $parrent = $group->getParent();
         $path ? $path .= '::' . $group->getName() : $path .= $group->getName();
 
-        if (isset($parrent)) {
-            return $this->getRecursivePath($parrent, $path);
+        if ($group->hasParent()) {
+            return $this->getRecursivePath($group->getParent(), $path);
         } else {
             return $path;
         }

@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca54f999-a3ec-45af-8bd1-705e03b18e7d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WbtPlugin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commands/WbtController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/ApiController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/FilePathHelper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/MessageHelper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/AbstractionBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/AbstractionExport.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/AbstractionImport.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AbstractionImport.php" afterPath="$PROJECT_DIR$/models/AbstractionImport.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,12 +25,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WbtController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WbtController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/WbtController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="864">
+              <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+              <folding>
+                <element signature="e#45#91#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +40,8 @@
       <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="270">
+              <caret line="48" column="79" lean-forward="true" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
               <folding>
                 <element signature="e#48#94#0#PHP" expanded="true" />
               </folding>
@@ -58,7 +52,7 @@
       <file leaf-file-name="FilePathHelper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/FilePathHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="-789">
               <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding>
                 <element signature="e#44#65#0#PHP" expanded="true" />
@@ -70,9 +64,21 @@
       <file leaf-file-name="MessageHelper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/MessageHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="288">
+              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractionImport.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/AbstractionImport.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="736">
+              <caret line="376" column="9" lean-forward="true" selection-start-line="370" selection-start-column="8" selection-end-line="376" selection-end-column="9" />
+              <folding>
+                <element signature="e#43#86#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,6 +99,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -101,6 +112,7 @@
         <option value="$PROJECT_DIR$/helpers/FilePathHelper.php" />
         <option value="$PROJECT_DIR$/models/AbstractionBase.php" />
         <option value="$PROJECT_DIR$/commands/WbtController.php" />
+        <option value="$PROJECT_DIR$/models/AbstractionImport.php" />
       </list>
     </option>
   </component>
@@ -202,7 +214,7 @@
       <updated>1502204308466</updated>
       <workItem from="1502204309694" duration="115000" />
       <workItem from="1502259138185" duration="3787000" />
-      <workItem from="1502264967255" duration="41000" />
+      <workItem from="1502264967255" duration="3216000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1502204399698</created>
@@ -211,16 +223,23 @@
       <option name="project" value="LOCAL" />
       <updated>1502204399698</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first">
+      <created>1502265016322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1502265016322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3943000" />
+    <option name="totallyTimeSpent" value="7118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19513543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19513543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -304,7 +323,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#45#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,17 +349,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/MessageHelper.php">
+    <entry file="file://$PROJECT_DIR$/commands/WbtController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="864">
+          <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+          <folding>
+            <element signature="e#45#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="48" column="79" lean-forward="true" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+          <folding>
+            <element signature="e#48#94#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/FilePathHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="-789">
           <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
             <element signature="e#44#65#0#PHP" expanded="true" />
@@ -346,21 +379,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ApiController.php">
+    <entry file="file://$PROJECT_DIR$/helpers/MessageHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#48#94#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/WbtController.php">
+    <entry file="file://$PROJECT_DIR$/models/AbstractionImport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="736">
+          <caret line="376" column="9" lean-forward="true" selection-start-line="370" selection-start-column="8" selection-end-line="376" selection-end-column="9" />
+          <folding>
+            <element signature="e#43#86#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
