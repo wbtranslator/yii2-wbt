@@ -2,8 +2,6 @@
 
 namespace wbtranslator\wbt;
 
-use common\modules\wbtplugin\commands\WbtController;
-use common\modules\wbtplugin\controllers\ApiController;
 use yii\db\Exception;
 
 /**
@@ -14,7 +12,7 @@ class WbtPlugin extends \yii\base\Module implements \yii\base\BootstrapInterface
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'common\modules\wbtplugin\controllers';
+    public $controllerNamespace = 'wbtranslator\wbt\controllers';
 
     /**
      * @var string
@@ -37,7 +35,7 @@ class WbtPlugin extends \yii\base\Module implements \yii\base\BootstrapInterface
     public function bootstrap($app)
     {
         if ($app instanceof \yii\console\Application) {
-            $this->controllerNamespace = 'common\modules\wbtplugin\commands';
+            $this->controllerNamespace = 'wbtranslator\wbt\commands';
         }
     }
 

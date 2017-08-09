@@ -26,15 +26,15 @@ class MessageHelper
         }
 
         if (key_exists('allFiles', $statistic)) {
-            echo "Imported " . $statistic['allFiles'] . " translations for the translation files \r\n";
+            echo "Imported " . $statistic['allFiles'] . " translations for translation files \r\n";
         }
 
         if (key_exists('updatedFiles', $statistic)) {
-            echo "Updated " . $statistic['updatedFiles'] . " translations for the translation files \r\n";
+            echo "Updated " . $statistic['updatedFiles'] . " translations for translation files \r\n";
         }
 
         if (key_exists('newFiles', $statistic)) {
-            echo "Created new " . $statistic['newFiles'] . " translations for the translation files \r\n";
+            echo "Created new " . $statistic['newFiles'] . " translations for translation files \r\n";
         }
     }
 }
