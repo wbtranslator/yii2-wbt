@@ -1,6 +1,6 @@
 {
-    "name": "wbtranslator/yii2-wbt",
-    "description": "translations",
+    "name": "wbtranslator/wbt-plugin-yii2",
+    "description": "Yii2 plugin for WBTranslator",
     "type": "yii2-extension",
     "keywords": ["yii2"," translations"," wbt"],
     "license": "MIT",
@@ -13,18 +13,11 @@
     "require": {
         "yiisoft/yii2": "*",
         "php": "^7",
-        "wbtranslator/wbt-sdk-php": "dev-groups"
+        "wbtranslator/wbt-sdk-php": "dev-master"
     },
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "wbtranslator\\wbt\\": "src/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/wbtranslator/wbt-sdk-php.git"
-        }
-    ]
+    }
 }
