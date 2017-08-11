@@ -14,7 +14,10 @@ class WBTranslatorAbstractionsModel
 
     public function __construct()
     {
-        $this->config = config('wbt');
+        $this->locale = Yii::$app->language;
+        $module = WbtPlugin::getInstance();
+
+        $this->config['api_key'] = $module->apiKey;
 
         if (!$this->config['api_key']) {
             throw new WBTranslatorException('Parameter WBT_API_KEY is required', 422);
