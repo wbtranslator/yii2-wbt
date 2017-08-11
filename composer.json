@@ -13,7 +13,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "php": "^7",
-        "wbtranslator/wbt-sdk-php": "dev-groups"
+        "wbtranslator/wbt-sdk-php": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {

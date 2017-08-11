@@ -5,6 +5,7 @@ namespace wbtranslator\wbt\commands;
 use wbtranslator\wbt\models\AbstractionExport;
 use wbtranslator\wbt\models\AbstractionImport;
 use wbtranslator\wbt\helpers\MessageHelper;
+use wbtranslator\wbt\models\WBTranslatorAbstractionsModel;
 use WBTranslator\WBTranslatorSdk;
 use wbtranslator\wbt\WbtPlugin;
 use yii\console\Controller;
