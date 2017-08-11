@@ -39,16 +39,4 @@ class WbtPlugin extends \yii\base\Module implements \yii\base\BootstrapInterface
             $this->controllerNamespace = 'wbtranslator\wbt\commands';
         }
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-
-        if (!$this->apiKey) {
-            throw new Exception("apiKey is missing");
-        }
-    }
 }

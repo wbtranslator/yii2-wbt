@@ -2,10 +2,10 @@
 
 namespace wbtranslator\wbt\commands;
 
+use wbtranslator\wbt\models\WBTranslatorAbstractionsModel;
 use wbtranslator\wbt\models\AbstractionExport;
 use wbtranslator\wbt\models\AbstractionImport;
 use wbtranslator\wbt\helpers\MessageHelper;
-use wbtranslator\wbt\models\WBTranslatorAbstractionsModel;
 use WBTranslator\WBTranslatorSdk;
 use wbtranslator\wbt\WbtPlugin;
 use yii\console\Controller;
@@ -20,50 +20,16 @@ use Yii;
 class WbtController extends Controller
 {
     /**
-     * @var WBTranslatorSdk
-     */
-    protected $sdk;
-
-    /**
-     * WbtController constructor.
-     * @param string $id
-     * @param Module $module
-     * @param array $config
-     */
-    public function __construct(string $id, Module $module, array $config = [])
-    {
-        parent::__construct($id, $module, $config);
-
-        $module = WbtPlugin::getInstance();
-
-        $client = new \GuzzleHttp\Client([
-            'base_uri' => 'http://192.168.88.149:8080/api/project/'
-        ]);
-
-        $this->sdk = new WBTranslatorSdk($module->apiKey, $client ?? null);
-    }
-
-    /**
      * @return mixed
      */
     public function actionExport()
     {
-        $abstractionExport = new AbstractionExport();
-        $dataForExport = $abstractionExport->export();
+        echo "Process ... \r\n";
 
-        try {
-            $this->sdk->translations()->create($dataForExport);
+        $model = new WBTranslatorAbstractionsModel;
+        $result = $model->export();
 
-        } catch (Exception $e) {
-
-            Yii::error('TRANSLATOR: ' . $e->getMessage());
-
-            echo $e->getMessage();
-
-            return Controller::EXIT_CODE_ERROR;
-        }
-
-        echo 'success';
+        echo 'Send ' . !empty($result) ? count($result) : 0 . " abstractions to WBTranslator \r\n";
 
         return Controller::EXIT_CODE_NORMAL;
     }
@@ -73,20 +39,10 @@ class WbtController extends Controller
      */
     public function actionImport()
     {
-        try {
-            $translations = $this->sdk->translations()->all();
+        $model = new WBTranslatorAbstractionsModel;
+        $result = $model->import();
 
-        } catch (\Exception $e) {
-
-            echo $e->getMessage();
-
-            return Controller::EXIT_CODE_ERROR;
-        }
-
-        $abstractionImport = new AbstractionImport();
-        $res = $abstractionImport->saveAbstractions($translations);
-
-        MessageHelper::getMessageImport($res);
+        echo 'Get ' . count($result) . "abstractions from WBTranslator  \r\n";
 
         return Controller::EXIT_CODE_NORMAL;
     }

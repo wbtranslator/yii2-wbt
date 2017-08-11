@@ -2,6 +2,7 @@
 
 namespace wbtranslator\wbt\helpers;
 
+use wbtranslator\wbt\WbtPlugin;
 use yii\db\Exception;
 use Yii;
 
@@ -11,88 +12,63 @@ use Yii;
  */
 class FilePathHelper
 {
-    const GROUP_DELIMITER = '::';
-    const LANGUAGE_DELIMITER = '||';
-    const PHP_FILE_EXTENSION = '.php';
     const DB_ABSTRACT_EXTENSION = 'YiiDB';
-    const FILE_EXTENSION_DELIMITER = '.';
 
     /**
-     * @var string
+     * Get path to project(basePath) from first element
+     *
+     * @param array $paths
+     * @return string
      */
-    private $config = [];
-
-    /**
-     * @var string
-     */
-    private $relativePath;
-
-    /**
-     * @param string $file
-     * @param string $config
-     * @return FilePathHelper
-     * @throws Exception
-     */
-    public function setConfig(string $file, string $config): FilePathHelper
+    public function getBasePath(array $paths): string
     {
-        $position = strripos($file, $config);
+        reset($paths);
+        $keyApp = key($paths);
+        $absolutPath = array_shift($paths);
 
-        if ($position !== false) {
+        $pos = strpos($absolutPath, $keyApp);
 
-            $this->config = [$config => $file];
-            $this->relativePath = substr($file, $position);
+        if ($pos !== false) {
+            return substr($absolutPath, 0, $pos);
+        }
 
+        throw new Exception('Error in config file');
+    }
+
+    public function getPathsFromPluginSettings(WbtPlugin $module):array
+    {
+        $pathArray = $module->langMap['PhpMessageSource'];
+
+        if (is_array($pathArray)) {
+
+            // Prepare paths with alias
+            array_walk($pathArray, function (&$item) {
+                return $item = Yii::getAlias($item);
+            });
+
+            return $pathArray;
         } else {
-            throw new Exception("Your config for the module $config is not correct, the message file does not belong to this configuration");
-        }
-
-        return $this;
+            throw new Exception('Settings for translator is not array');
+        };
     }
 
     /**
-     * @return string
+     * @param array $paths
+     * @return array
      */
-    public function getAlterPathName(): string
+    public function createRelativePaths(array $paths): array
     {
-        $path = str_replace([DIRECTORY_SEPARATOR, self::PHP_FILE_EXTENSION], [self::GROUP_DELIMITER, ''], $this->relativePath);
-        return str_replace(self::GROUP_DELIMITER . Yii::$app->language . self::GROUP_DELIMITER,
-            self::LANGUAGE_DELIMITER, $path);
+        $apps = array_keys($paths);
 
-    }
+        $relatives = array_map(function($path, $app){
+            $pos = strpos($path, $app);
 
-    /**
-     * @param string $alterPathName
-     * @return string
-     */
-    public function getRelativePath(string $alterPathName): string
-    {
-        return str_replace(self::GROUP_DELIMITER,
-            DIRECTORY_SEPARATOR, $alterPathName);
-    }
+            if ($pos !== false) {
+                return substr($path, $pos);
+            }
 
-    /**
-     * @param string $path
-     * @param string $lang
-     * @param string $group
-     * @return string
-     */
-    public function getFilePath(string $path, string $lang, string $group): string
-    {
-        return $path . DIRECTORY_SEPARATOR . $lang . DIRECTORY_SEPARATOR . $group . self::PHP_FILE_EXTENSION;
-    }
+        },$paths, $apps);
 
-    /**
-     * @param string $path
-     * @return string
-     */
-    public function getDerictoryFromPath(string $path):string
-    {
-        $dirArray = explode(DIRECTORY_SEPARATOR,$path);
-        $lastDir = array_pop($dirArray);
-
-        if (strpos($lastDir, self::FILE_EXTENSION_DELIMITER)){
-            return implode(DIRECTORY_SEPARATOR,$dirArray );
-        }
-        return $path;
+        return $relatives;
     }
 }

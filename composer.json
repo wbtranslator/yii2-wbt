@@ -20,11 +20,5 @@
         "psr-4": {
             "wbtranslator\\wbt\\": "src/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/wbtranslator/wbt-sdk-php.git"
-        }
-    ]
+    }
 }
