@@ -58,11 +58,11 @@ class WBTranslatorAbstractionsModel
 
         $sdkConfig->setApiKey($this->config['api_key'])
             ->setBasePath($basePath)
-            ->setBaseLocale(!empty($this->config['locale']) ? $this->config['locale'] : Yii::$app->language)
-            ->setLangResourcePaths($this->filePathHelper->createRelativePaths($paths));
+            ->setLocale(!empty($this->config['locale']) ? $this->config['locale'] : Yii::$app->language)
+            ->setLangPaths($this->filePathHelper->createRelativePaths($paths));
 
         if (!empty($this->config['group_delimiter'])) {
-            $sdkConfig->setGroupDelimiter($this->config['group_delimiter']);
+            $sdkConfig->setDelimiter($this->config['group_delimiter']);
         }
 
         $this->sdk = new WBTranslatorSdk($sdkConfig);
