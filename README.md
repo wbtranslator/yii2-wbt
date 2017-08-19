@@ -1,7 +1,7 @@
 # WBTranslator Plugin Yii2
 #### Installation by composer
 ```
-composer require wbtranslator/yii2-wbt
+composer require wbtranslator/yii2-wbt require-dev
 ```
 #### Set configs for plugin
 
@@ -42,7 +42,9 @@ Add configs for plugin in the same config file.
          ...
      ],
 ```
-In config option `langMap` you can customise your translations storage.
+In config option `langMap` you can customise your translations storage. 
+
+In config option `PhpMessageSource` in section `basic` you must write your project name.
 
 If you are using Advanced template, and you have more then one default storage with your translations, you can add it's 
 all to `PhpMessageSource` config option.

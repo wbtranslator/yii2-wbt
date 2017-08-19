@@ -2,11 +2,11 @@
 
 namespace wbtranslator\wbt\models;
 
-use wbtranslator\wbt\helpers\FilePathHelper;
-use WBTranslator\Sdk\WBTranslatorSdk;
-use wbtranslator\wbt\WbtPlugin;
 use WBTranslator\Sdk\Collection;
 use WBTranslator\Sdk\Config;
+use WBTranslator\Sdk\WBTranslatorSdk;
+use wbtranslator\wbt\helpers\FilePathHelper;
+use wbtranslator\wbt\WbtPlugin;
 use Yii;
 
 /**
@@ -117,5 +117,10 @@ class WBTranslatorAbstractionsModel
         if (key_exists('DbMessageSource', $module->langMap)) {
             $dbCollection = (new WBTranslatorBD($module))->put($arrayForBD);
         }
+
+        return [
+            'files' => $collection ?? [],
+            'db' => $dbCollection ?? []
+        ];
     }
 }
