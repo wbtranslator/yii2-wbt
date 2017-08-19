@@ -42,7 +42,7 @@ class WbtController extends Controller
         $model = new WBTranslatorAbstractionsModel;
         $result = $model->import();
 
-        echo 'Get ' . count($result['files']) . " to file and abstractions " . count($result['db']) .
+        echo 'Get ' . count($result['files']) . " abstractions to file and " . count($result['db']) .
             " ro db from WBTranslator  \r\n";
 
         return Controller::EXIT_CODE_NORMAL;
