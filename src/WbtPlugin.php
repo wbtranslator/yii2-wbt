@@ -14,22 +14,18 @@ class WbtPlugin extends \yii\base\Module implements \yii\base\BootstrapInterface
      * @inheritdoc
      */
     public $controllerNamespace = 'wbtranslator\wbt\controllers';
-
     /**
      * @var string
      */
     public $defaultController = ApiController::class;
-
     /**
      * @var array
      */
     public $langMap;
-
     /**
      * @var string
      */
     public $apiKey;
-
     /**
      * @param \yii\base\Application $app
      */

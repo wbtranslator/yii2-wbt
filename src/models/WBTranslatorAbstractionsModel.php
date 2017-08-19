@@ -117,5 +117,10 @@ class WBTranslatorAbstractionsModel
         if (key_exists('DbMessageSource', $module->langMap)) {
             $dbCollection = (new WBTranslatorBD($module))->put($arrayForBD);
         }
+
+        return [
+            'files' => $collection ?? [],
+            'db' => $dbCollection ?? []
+        ];
     }
 }
