@@ -16,6 +16,16 @@ If you are using basic version, set your default language in `console.php`.
 ```
 If you are using Advanced template, set default language in `common/main.php` or in `console/main.php`.
 
+Add wbt_plugin to your bootstrap config in console app
+```
+ $config = [
+     ...
+    'bootstrap' => ['log', 'wbt_plugin'],
+     ...
+ ];
+```
+
+
 Add configs for plugin in the same config file. 
 ```
  'modules' => [

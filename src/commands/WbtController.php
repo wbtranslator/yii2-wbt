@@ -3,8 +3,6 @@
 namespace wbtranslator\wbt\commands;
 
 use wbtranslator\wbt\models\WBTranslatorAbstractionsModel;
-use wbtranslator\wbt\models\AbstractionExport;
-use wbtranslator\wbt\models\AbstractionImport;
 use wbtranslator\wbt\helpers\MessageHelper;
 use WBTranslator\WBTranslatorSdk;
 use wbtranslator\wbt\WbtPlugin;
