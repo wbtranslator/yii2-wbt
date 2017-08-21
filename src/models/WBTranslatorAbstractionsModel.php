@@ -43,26 +43,31 @@ class WBTranslatorAbstractionsModel
         $this->locale = Yii::$app->language;
         $module = WbtPlugin::getInstance();
 
-        $this->filePathHelper = new FilePathHelper;
-
         $this->config['api_key'] = $module->apiKey;
 
         if (!$this->config['api_key']) {
             throw new WBTranslatorException('Parameter WBT_API_KEY is required', 422);
         }
 
-        $paths = $this->filePathHelper->getPathsFromPluginSettings($module);
-        $basePath = $this->filePathHelper->getBasePath($paths);
+        $this->filePathHelper = new FilePathHelper;
 
         $sdkConfig = new Config;
+        $sdkConfig->setApiKey($this->config['api_key']);
 
-        $sdkConfig->setApiKey($this->config['api_key'])
-            ->setBasePath($basePath)
-            ->setBaseLocale(!empty($this->config['locale']) ? $this->config['locale'] : Yii::$app->language)
-            ->setLangResourcePaths($this->filePathHelper->createRelativePaths($paths));
+        if (key_exists('PhpMessageSource', $module->langMap)){
 
-        if (!empty($this->config['group_delimiter'])) {
-            $sdkConfig->setGroupDelimiter($this->config['group_delimiter']);
+            $paths = $this->filePathHelper->getPathsFromPluginSettings($module);
+            $basePath = $this->filePathHelper->getBasePath($paths);
+
+
+            $sdkConfig->setBasePath($basePath)
+                ->setLocale(!empty($this->config['locale']) ? $this->config['locale'] : Yii::$app->language)
+                ->setLangPaths($this->filePathHelper->createRelativePaths($paths));
+
+            if (!empty($this->config['group_delimiter'])) {
+                $sdkConfig->setDelimiter($this->config['group_delimiter']);
+            }
+
         }
 
         $this->sdk = new WBTranslatorSdk($sdkConfig);

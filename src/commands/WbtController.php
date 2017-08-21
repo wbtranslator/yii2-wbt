@@ -28,6 +28,7 @@ class WbtController extends Controller
         $result = $model->export();
 
         echo 'Send ' . !empty($result) ? count($result) : 0 . " abstractions to WBTranslator \r\n";
+        echo "\r\n";
 
         return Controller::EXIT_CODE_NORMAL;
     }
@@ -41,6 +42,7 @@ class WbtController extends Controller
         $result = $model->import();
 
         echo 'Get ' . count($result) . "abstractions from WBTranslator  \r\n";
+        echo "\r\n";
 
         return Controller::EXIT_CODE_NORMAL;
     }
