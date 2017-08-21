@@ -3,9 +3,7 @@
 namespace wbtranslator\wbt\commands;
 
 use wbtranslator\wbt\models\WBTranslatorAbstractionsModel;
-use wbtranslator\wbt\helpers\MessageHelper;
 use WBTranslator\WBTranslatorSdk;
-use wbtranslator\wbt\WbtPlugin;
 use yii\console\Controller;
 use yii\base\Exception;
 use yii\base\Module;
