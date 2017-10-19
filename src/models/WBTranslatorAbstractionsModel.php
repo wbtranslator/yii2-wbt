@@ -54,6 +54,13 @@ class WBTranslatorAbstractionsModel
         $sdkConfig = new Config;
         $sdkConfig->setApiKey($this->config['api_key']);
 
+
+        if (!empty($module->apiUrl)) {
+            $sdkConfig->setClient(new \GuzzleHttp\Client([
+                'base_uri' => $module->apiUrl
+            ]));
+        }
+
         if (key_exists('PhpMessageSource', $module->langMap)){
 
             $paths = $this->filePathHelper->getPathsFromPluginSettings($module);

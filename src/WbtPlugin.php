@@ -25,6 +25,11 @@ class WbtPlugin extends \yii\base\Module implements \yii\base\BootstrapInterface
     public $apiKey;
 
     /**
+     * @var string
+     */
+    public $apiUrl = '';
+
+    /**
      * @param \yii\base\Application $app
      */
     public function bootstrap($app)
