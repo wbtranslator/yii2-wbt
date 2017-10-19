@@ -1,7 +1,7 @@
 # WBTranslator Plugin Yii2
 #### Installation by composer
 ```
-composer require wbtranslator/yii2-wbt require-dev
+composer require wbtranslator/yii2-wbt
 ```
 #### Set configs for plugin
 
