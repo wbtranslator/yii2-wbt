@@ -38,8 +38,8 @@ class WbtController extends Controller
     {
         $model = new WBTranslatorAbstractionsModel;
         $result = $model->import();
-
-        echo 'Get ' . count($result) . "abstractions from WBTranslator  \r\n";
+        $amount = count($result['files']) + count($result['db']);
+        echo 'Get ' . $amount . "abstractions from WBTranslator  \r\n";
         echo "\r\n";
 
         return Controller::EXIT_CODE_NORMAL;

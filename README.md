@@ -26,7 +26,7 @@ Add wbt_plugin to your bootstrap config in console app
 ```
 
 
-Add configs for plugin in the same config file. 
+Add configs for plugin in the same config file, `$config` array. 
 ```
  'modules' => [
          ...
@@ -115,5 +115,5 @@ php yii  wbt_plugin/wbt/export
 
 #### Get abstractions from WBTranslator and save them to lang directorys
 ```	
-php yii  wbt_plugin/wbt/imports
+php yii  wbt_plugin/wbt/import
 ```
